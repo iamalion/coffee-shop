@@ -3,6 +3,7 @@ import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from './CoffeeList';
 import CoffeeDetail from './CoffeeDetail';
 import EditCoffeeForm from './EditCoffeeForm';
+import { v4 } from 'uuid';
 
 class CoffeeControl extends React.Component {
 
@@ -12,7 +13,49 @@ class CoffeeControl extends React.Component {
         formVisibleOnPage: false,
         mainCoffeeList: [],
         selectedCoffee: null,
-        editing: false
+        editing: false,
+        mainCoffeeList: [
+            {
+              name: "Morning Bliss",
+              origin: "Colombia",
+              roast: "Medium",
+              price: 8.99,
+              available: 130,
+              id: v4()
+            },
+            {
+              name: "Espresso Delight",
+              origin: "Italy",
+              roast: "Dark",
+              price: 9.99,
+              available: 90,
+              id: v4()
+            },
+            {
+              name: "Tropical Sunrise",
+              origin: "Costa Rica",
+              roast: "Light",
+              price: 7.99,
+              available: 50,
+              id: v4()
+            },
+            {
+              name: "Caramel Macchiato",
+              origin: "Brazil",
+              roast: "Medium",
+              price: 10.99,
+              available: 25,
+              id: v4()
+            },
+            {
+              name: "Mocha Madness",
+              origin: "Ethiopia",
+              roast: "Dark",
+              price: 11.99,
+              available: 10,
+              id: v4()
+            }
+          ]
     };
   }
 
