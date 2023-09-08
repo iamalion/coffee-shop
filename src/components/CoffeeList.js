@@ -11,7 +11,7 @@ function CoffeeList(props){
         <hr/>
         {props.coffeeList.map((coffee) =>
           <Coffee 
-            whenCoffeeClicked = { props.whenCoffeeClicked }
+            whenCoffeeClicked = { props.onCoffeeSelection }
             name={coffee.name}
             origin={coffee.origin}
             description={coffee.description}
