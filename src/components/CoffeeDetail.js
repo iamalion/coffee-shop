@@ -17,10 +17,10 @@ function CoffeeDetail(props){
             <p><em>${coffee.price} per pound, {coffee.available} pounds available</em></p>
             <p><em></em></p>
             <br />
-            <button className="btn" onClick={ props.onClickingEdit }>Edit</button> 
-            <button className="btn" onClick={ props.onCoffeeSale }>Sell</button> 
-            <button className="btn" onClick= { props.onCoffeeRestock }>Restock</button>
-            <button className="btn" onClick={()=> onClickingDelete(coffee.id) }>Delete</button>
+            <button className="btn btn-blue" onClick={ props.onClickingEdit }>Edit</button> 
+            <button className="btn btn-green" onClick={ props.onCoffeeSale }>Sell</button> 
+            <button className="btn btn-orange" onClick= { props.onCoffeeRestock }>Restock</button>
+            <button className="btn btn-red" onClick={()=> onClickingDelete(coffee.id) }>Delete</button>
             <hr/>
         </React.Fragment>
     );

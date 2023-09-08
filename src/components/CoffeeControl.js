@@ -170,7 +170,7 @@ class CoffeeControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button className="btn" onClick={this.handleClick}>{buttonText}</button> 
+        <button className="btn btn-black" onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }

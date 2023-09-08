@@ -23,6 +23,7 @@ function CoffeeList(props){
             id={coffee.id}
             key={coffee.id}/>
         )}
+        <br />
       </React.Fragment>
   );
 }
