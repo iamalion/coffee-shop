@@ -8,6 +8,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-image: url('../public/coffee-5447420_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -18,6 +21,7 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .header {
@@ -25,6 +29,15 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+.coffee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
 }
 
 .btn {

@@ -4,13 +4,15 @@ import PropTypes from "prop-types";
 
 function CoffeeList(props){
     //Error handling
-    if (!props.coffeeList || !Array.isArray(props.coffeeList)) {
-        return <div>No coffee available.</div>;
-      }
+    if (!Array.isArray(props.coffeeList) || props.coffeeList.length === 0) {
+        return <div>
+                    <h3>No Coffee Available.</h3>
+                </div>
+    }
+      
       
   return (
     <React.Fragment>
-        <hr/>
         {props.coffeeList.map((coffee) =>
           <Coffee 
             whenCoffeeClicked = { props.onCoffeeSelection }
