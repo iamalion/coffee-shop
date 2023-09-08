@@ -4,10 +4,10 @@ import CoffeeControl from './CoffeeControl';
 
 const App = () => {
   return (
-    <React.Fragment>
+    <div className='container'>
       <Header />
       <CoffeeControl />
-    </React.Fragment>
+    </div>
   );
 }
 

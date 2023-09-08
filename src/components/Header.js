@@ -2,10 +2,12 @@ import React from "react";
 
 function Header(){
   return (
-    <React.Fragment>
-      <h1>Coffee Shop</h1>
+    
+      <header className="header">
+        <h1>JavaScript Joe's Java Shop</h1>
+      </header>
       
-    </React.Fragment>
+    
   );
 }
 
