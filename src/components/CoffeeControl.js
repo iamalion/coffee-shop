@@ -175,9 +175,8 @@ class CoffeeControl extends React.Component {
 
     return (
       <React.Fragment>
-        <Header onAddButtonClick={this.handleAddButtonClick} />
+        <Header onAddButtonClick={this.handleAddButtonClick} buttonText={buttonText}/>
         {currentlyVisibleState}
-        <button className="btn btn-black" onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }

@@ -6,7 +6,7 @@ function Header(props){
     
       <header className="header">
         <h1>JavaScript Joe's Java Shop</h1>
-        <Button className="btn-black btn" onClick={props.onAddButtonClick} label="Add Coffee" />
+        <Button className="btn-black btn" onClick={props.onAddButtonClick} label={props.buttonText} />
       </header>
       
       
