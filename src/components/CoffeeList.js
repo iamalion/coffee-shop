@@ -6,12 +6,13 @@ function CoffeeList(props){
     if (!props.coffeeList || !Array.isArray(props.coffeeList)) {
         return <div>No coffee available.</div>;
       }
+      console.log(props.coffeeList);
   return (
     <React.Fragment>
         <hr/>
         {props.coffeeList.map((coffee) =>
           <Coffee 
-            whenCoffeeClicked = { props.onCoffeeSelection }
+            whenCoffeeClicked = { props.whenCoffeeClicked }
             name={coffee.name}
             origin={coffee.origin}
             description={coffee.description}

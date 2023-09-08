@@ -11,7 +11,6 @@ class CoffeeControl extends React.Component {
     super(props);
     this.state = {
         formVisibleOnPage: false,
-        mainCoffeeList: [],
         selectedCoffee: null,
         editing: false,
         mainCoffeeList: [
@@ -146,6 +145,7 @@ class CoffeeControl extends React.Component {
       currentlyVisibleState = <CoffeeList coffeeList={this.state.mainCoffeeList} onCoffeeSelection={this.handleChangingSelectedCoffee} />;
       buttonText = "Add Coffee";
     }
+    console.log("coffee data", this.state.mainCoffeeList)
     return (
       <React.Fragment>
         {currentlyVisibleState}
