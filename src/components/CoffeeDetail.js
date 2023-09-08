@@ -5,17 +5,22 @@ function CoffeeDetail(props){
     const { coffee, onClickingDelete } = props;
     return (
         <React.Fragment>
+            <hr/>
             <h1>Coffee Detail</h1>
+    
             <h3>{coffee.name} - <em>{coffee.origin}</em></h3>
+            <p>{coffee.roast} roast</p>
+            <br />
             <p>{coffee.description}</p>
-            <p><em>{coffee.roast} roast</em></p>
-            <p><em>${coffee.price} per pound</em></p>
-            <p><em>{coffee.available} pounds available</em></p>
-
-            <button onClick={ props.onClickingEdit }>Edit</button> 
-            <button onClick={ props.onCoffeeSale }>Sell</button> 
-            <button onClick= { props.onCoffeeRestock }>Restock</button>
-            <button onClick={()=> onClickingDelete(coffee.id) }>Delete</button>
+            <p></p>
+            <br />
+            <p><em>${coffee.price} per pound, {coffee.available} pounds available</em></p>
+            <p><em></em></p>
+            <br />
+            <button className="btn" onClick={ props.onClickingEdit }>Edit</button> 
+            <button className="btn" onClick={ props.onCoffeeSale }>Sell</button> 
+            <button className="btn" onClick= { props.onCoffeeRestock }>Restock</button>
+            <button className="btn" onClick={()=> onClickingDelete(coffee.id) }>Delete</button>
             <hr/>
         </React.Fragment>
     );

@@ -3,6 +3,7 @@ import Coffee from "./Coffee";
 import PropTypes from "prop-types";
 
 function CoffeeList(props){
+    //Error handling
     if (!props.coffeeList || !Array.isArray(props.coffeeList)) {
         return <div>No coffee available.</div>;
       }
