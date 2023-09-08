@@ -18,6 +18,7 @@ class CoffeeControl extends React.Component {
             {
               name: "Morning Bliss",
               origin: "Colombia",
+              description: "A medium roast coffee from Colombia that delivers a smooth and energizing start to your day.",
               roast: "Medium",
               price: 8.99,
               available: 130,
@@ -26,6 +27,7 @@ class CoffeeControl extends React.Component {
             {
               name: "Espresso Delight",
               origin: "Italy",
+              description:"Indulge in the bold and rich flavors of Italy with this dark roast espresso that's perfect for espresso lovers.",
               roast: "Dark",
               price: 9.99,
               available: 90,
@@ -34,6 +36,7 @@ class CoffeeControl extends React.Component {
             {
               name: "Tropical Sunrise",
               origin: "Costa Rica",
+              description: "Experience the light and fruity notes of Costa Rican coffee, reminiscent of a tropical sunrise in a cup.",
               roast: "Light",
               price: 7.99,
               available: 50,
@@ -42,6 +45,7 @@ class CoffeeControl extends React.Component {
             {
               name: "Caramel Macchiato",
               origin: "Brazil",
+              description: "Brazilian medium roast coffee infused with creamy caramel flavors, offering a delightful and sweet coffee experience.",
               roast: "Medium",
               price: 10.99,
               available: 25,
@@ -50,6 +54,7 @@ class CoffeeControl extends React.Component {
             {
               name: "Mocha Madness",
               origin: "Ethiopia",
+              description:"Dive into the intense and chocolaty depths of Ethiopian dark roast coffee, a true delight for chocolate and coffee enthusiasts alike.",
               roast: "Dark",
               price: 11.99,
               available: 10,
@@ -78,7 +83,7 @@ class CoffeeControl extends React.Component {
     this.setState({mainCoffeeList: newMainCoffeeList, formVisibleOnPage: false });
   }
 
-  handleChangingSElectedCoffee = (id) => { 
+  handleChangingSelectedCoffee = (id) => { 
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
     this.setState({selectedCoffee: selectedCoffee});
 }
@@ -95,6 +100,7 @@ class CoffeeControl extends React.Component {
     console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
+
   handleEditingCoffeeInList = (coffeeToEdit) => {
     const editedMainCoffeeList = this.state.mainCoffeeList
       .filter(coffee => coffee.id !== this.state.selectedCoffee.id)
@@ -103,6 +109,20 @@ class CoffeeControl extends React.Component {
         mainCoffeeList: editedMainCoffeeList,
         editing: false,
         selectedCoffee: null
+      });
+  }
+
+  handleSellingCoffee = (id) => {  
+    const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
+    if (selectedCoffee.available > 0) {
+      selectedCoffee.available -= 1;
+    }
+    const editedMainCoffeeList = this.state.mainCoffeeList
+      .filter(coffee => coffee.id !== id)
+      .concat(selectedCoffee);
+    this.setState({
+        mainCoffeeList: editedMainCoffeeList,
+        selectedCoffee: selectedCoffee
       });
   }
 
