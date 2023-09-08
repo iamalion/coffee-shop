@@ -5,7 +5,7 @@ import CoffeeControl from './CoffeeControl';
 const App = () => {
   return (
     <div className='container'>
-      <Header />
+      {/* <Header /> */}
       <CoffeeControl />
     </div>
   );

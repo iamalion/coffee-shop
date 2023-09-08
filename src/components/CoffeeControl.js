@@ -3,6 +3,7 @@ import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from './CoffeeList';
 import CoffeeDetail from './CoffeeDetail';
 import EditCoffeeForm from './EditCoffeeForm';
+import Header from './Header';
 import { v4 } from 'uuid';
 
 class CoffeeControl extends React.Component {
@@ -75,6 +76,11 @@ class CoffeeControl extends React.Component {
         formVisibleOnPage: !prevState.formVisibleOnPage,
       }));
     }
+  }
+  handleAddButtonClick = () => {
+    this.setState((prevState) => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage,
+    }));
   }
 
   handleAddingNewCoffeeToList = (newCoffee) => {
@@ -169,6 +175,7 @@ class CoffeeControl extends React.Component {
 
     return (
       <React.Fragment>
+        <Header onAddButtonClick={this.handleAddButtonClick} />
         {currentlyVisibleState}
         <button className="btn btn-black" onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
