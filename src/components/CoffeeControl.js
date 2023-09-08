@@ -124,9 +124,22 @@ class CoffeeControl extends React.Component {
     newMainCoffeeList[index] = selectedCoffee;
     this.setState({
         mainCoffeeList: newMainCoffeeList,
-    });
-     
+    }); 
   }
+
+  handleStockingCoffee = (id) => {
+    const {selectedCoffee, mainCoffeeList} = this.state;
+    const index = mainCoffeeList.indexOf(selectedCoffee);
+
+        if (selectedCoffee.available < 130) {
+        selectedCoffee.available += 1;
+        const newMainCoffeeList = [...mainCoffeeList];
+        newMainCoffeeList[index] = selectedCoffee;
+        this.setState({
+            mainCoffeeList: newMainCoffeeList,
+            });
+        }
+    }   
 
   render(){
     let currentlyVisibleState = null;
@@ -138,9 +151,13 @@ class CoffeeControl extends React.Component {
 
     } else if (this.state.selectedCoffee != null) {
       currentlyVisibleState = <CoffeeDetail 
-        coffee = {this.state.selectedCoffee} onClickingDelete = {this.handleDeletingCoffee}
-        onClickingEdit = {this.handleEditClick} />
-      buttonText = "Return to Coffee List";
+        coffee = {this.state.selectedCoffee} 
+        onClickingDelete = {this.handleDeletingCoffee}
+        onClickingEdit = {this.handleEditClick} 
+        onCoffeeSale={this.handleSellingCoffee}
+        onCoffeeRestock={this.handleStockingCoffee}
+        />
+        buttonText = "Return to Coffee List";
     }
     else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffeeToList}/>
@@ -149,7 +166,7 @@ class CoffeeControl extends React.Component {
       currentlyVisibleState = <CoffeeList coffeeList={this.state.mainCoffeeList} onCoffeeSelection={this.handleChangingSelectedCoffee} />;
       buttonText = "Add Coffee";
     }
-    
+
     return (
       <React.Fragment>
         {currentlyVisibleState}
