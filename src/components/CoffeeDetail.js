@@ -15,7 +15,7 @@ function CoffeeDetail(props){
             <p></p>
             <br />
             <p><em>${coffee.price} per pound, {coffee.available} pounds available</em></p>
-            <p><em></em></p>
+            
             <br />
             <button className="btn btn-blue" onClick={ props.onClickingEdit }>Edit</button> 
             <button className="btn btn-green" onClick={ props.onCoffeeSale }>Sell</button> 

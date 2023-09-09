@@ -22,6 +22,7 @@ class CoffeeControl extends React.Component {
               roast: "Medium",
               price: 8.99,
               available: 130,
+              onSale: false,
               id: v4()
             },
             {
@@ -31,6 +32,7 @@ class CoffeeControl extends React.Component {
               roast: "Dark",
               price: 9.99,
               available: 90,
+              onSale: false,
               id: v4()
             },
             {
@@ -40,6 +42,7 @@ class CoffeeControl extends React.Component {
               roast: "Light",
               price: 7.99,
               available: 50,
+              onSale: false,
               id: v4()
             },
             {
@@ -49,6 +52,7 @@ class CoffeeControl extends React.Component {
               roast: "Medium",
               price: 10.99,
               available: 25,
+              onSale: false,
               id: v4()
             },
             {
@@ -58,6 +62,7 @@ class CoffeeControl extends React.Component {
               roast: "Dark",
               price: 11.99,
               available: 10,
+              onSale: false,
               id: v4()
             }
           ]

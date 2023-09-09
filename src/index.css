@@ -73,6 +73,10 @@ body {
   background: #008000;
 }
 
+.btn-purple {
+  background: #800080;
+}
+
 .btn:focus {
   outline: none;
 }
