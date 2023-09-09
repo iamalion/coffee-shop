@@ -64,12 +64,20 @@ class CoffeeControl extends React.Component {
     };
   }
 
-
-  handleAddButtonClick = () => {
-    this.setState((prevState) => ({
+handleAddButtonClick = () => { 
+  if (this.state.selectedCoffee != null) {
+    this.setState({
+      formVisibleOnPage: false,
+      selectedCoffee: null,
+      editing: false
+    });
+  } else {
+    this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage,
     }));
   }
+}
+
 
   handleAddingNewCoffeeToList = (newCoffee) => {
     const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
@@ -80,8 +88,6 @@ class CoffeeControl extends React.Component {
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
     this.setState({selectedCoffee: selectedCoffee});
 }
-
-
 
   handleEditClick = () => {
     this.setState({editing: true});
@@ -137,11 +143,10 @@ class CoffeeControl extends React.Component {
 
   render(){
     let currentlyVisibleState = null;
-    let buttonText = null;
+    let buttonText = "Return to Coffee List";
 
     if (this.state.editing ) {      
       currentlyVisibleState = <EditCoffeeForm coffee = {this.state.selectedCoffee} onEditCoffee = {this.handleEditingCoffeeInList} />
-      buttonText = "Return to Coffee List";
 
     } else if (this.state.selectedCoffee != null) {
       currentlyVisibleState = <CoffeeDetail 
@@ -151,11 +156,9 @@ class CoffeeControl extends React.Component {
         onCoffeeSale={this.handleSellingCoffee}
         onCoffeeRestock={this.handleStockingCoffee}
         />
-        buttonText = "Return to Coffee List";
-    }
-    else if (this.state.formVisibleOnPage) {
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffeeToList}/>
-      buttonText = "Return to Coffee List"; 
+
     } else {
       currentlyVisibleState = <CoffeeList coffeeList={this.state.mainCoffeeList} onCoffeeSelection={this.handleChangingSelectedCoffee} />;
       buttonText = "Add Coffee";
@@ -168,8 +171,6 @@ class CoffeeControl extends React.Component {
       </React.Fragment>
     );
   }
-
-
 }
 
 export default CoffeeControl;
