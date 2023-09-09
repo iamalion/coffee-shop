@@ -34,6 +34,7 @@ function ReusableForm(props) {
                     type='number'
                     name='price'
                     min='0'
+                    step="0.01"
                     placeholder='Price per pound' required />
             </div>
             <div className="form-control">
