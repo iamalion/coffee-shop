@@ -131,14 +131,19 @@ handleAddButtonClick = () => {
     const {selectedCoffee, mainCoffeeList} = this.state;
     const index = mainCoffeeList.indexOf(selectedCoffee);
 
-        if (selectedCoffee.available < 130) {
-        selectedCoffee.available += 1;
-        const newMainCoffeeList = [...mainCoffeeList];
-        newMainCoffeeList[index] = selectedCoffee;
-        this.setState({
-            mainCoffeeList: newMainCoffeeList,
-            });
-        }
+    if (typeof selectedCoffee.available === 'string') {
+      // Convert to a number before incrementing
+      selectedCoffee.available = parseInt(selectedCoffee.available, 10);
+    }
+
+    if (selectedCoffee.available < 130) {
+      selectedCoffee.available += 1;
+      const newMainCoffeeList = [...mainCoffeeList];
+      newMainCoffeeList[index] = selectedCoffee;
+      this.setState({
+          mainCoffeeList: newMainCoffeeList,
+          });
+      }
     }   
 
   render(){

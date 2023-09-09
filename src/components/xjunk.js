@@ -12,7 +12,7 @@
 //       }));
 //     }
 //   }
-
+// Button was not working with this code:
 // handleAddButtonClick = () => {
 //     this.setState((prevState) => ({
 //       formVisibleOnPage: !prevState.formVisibleOnPage,
