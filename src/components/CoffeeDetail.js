@@ -1,3 +1,5 @@
+// This component displays detailed information about a selected coffee item and allows you to edit or delete it.
+
 import React from "react";
 import PropTypes from "prop-types";
 

@@ -1,3 +1,5 @@
+// This is a class-based component that manages the main state of the application. It handles various functions such as adding, editing, and deleting coffee items. It also handles the conditional rendering of components based on the current state of the application. It renders a Header component and one of three components: CoffeeList, CoffeeDetail, or NewCoffeeForm. It also renders a button that toggles the formVisibleOnPage state between true and false. It renders a list of coffee items that are passed in as props. It also passes down various functions as props to its child components. These functions are used to change the state of the application.
+
 import React from 'react';
 import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from './CoffeeList';

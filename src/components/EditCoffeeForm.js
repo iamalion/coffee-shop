@@ -1,3 +1,4 @@
+// This component allows you to edit a coffee item. It takes the current coffee details and provides a form for editing.
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";

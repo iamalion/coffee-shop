@@ -1,3 +1,5 @@
+// This is a reusable button component that takes three props: className, onClick, and label. It renders a button with these properties.
+
 import React from "react";
 import PropTypes from "prop-types";
 

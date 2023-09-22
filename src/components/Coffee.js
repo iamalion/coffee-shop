@@ -1,3 +1,5 @@
+// This is a component for displaying coffee details. It receives various props to display coffee information.
+
 import React from "react";
 import PropTypes from "prop-types";
 

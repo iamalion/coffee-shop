@@ -1,3 +1,5 @@
+// This component provides a reusable form structure with input fields for various coffee properties.
+
 import React from "react";
 import PropTypes from "prop-types";
 

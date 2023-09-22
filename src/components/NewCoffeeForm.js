@@ -1,3 +1,5 @@
+// This component provides a form for adding new coffee items. It handles form submission and creates a new coffee item.
+
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
